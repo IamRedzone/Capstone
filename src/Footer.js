@@ -1,10 +1,14 @@
 import React from 'react';
-import LLlogo from './assets/Little-lemon-logo.jpg';
+import footerLogo from './assets/Asset18_4x.svg';
 
 export default function Footer() {
+  const imageStyle = {
+    width: '300px',
+    height: '100px'
+}
     return (
         <footer className='footer'>
-          <img src={LLlogo} alt="a logo of Little Lemon" ></img>
+          <img src={footerLogo} style={imageStyle} alt="a logo of Little Lemon"/>
         </footer>
     )
 }
