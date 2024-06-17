@@ -5,9 +5,12 @@ import Left from './Left';
 import Right from './Right';
 import './App.css';
 import './styles.css';
+import React from 'react';
+import { ScrollProvider } from './Scrollcontext';
 
 function App() {
   return (
+    <ScrollProvider>
     <div className='container'>
     <Head/>
     <Left/>
@@ -15,6 +18,7 @@ function App() {
     <Right/>
     <Footer/>
   </div>
+  </ScrollProvider>
   );
 }
 

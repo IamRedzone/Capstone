@@ -64,14 +64,16 @@ html{
 /* Properties for other selectors */
 .header {
     grid-area: header;
-    background-color:#fff;
+    background-color:hsla(150,6%,93%,0.8) ;
     color: #000;
     text-align: center;
 }
 .main {
     grid-area: main;
 }
-
+.sidebar{
+    display: none;
+}
 .footer {
     grid-area: footer;
     padding: 10px;
@@ -98,7 +100,9 @@ padding: 0 50px;
     color: #000;
   }
   .header{
-        flex-direction: row;
+    position: fixed;
+    z-index: 10;
+    flex-direction: row;
     align-items: center;
     width: 100%;
     display: flex;
@@ -217,7 +221,7 @@ body{
     color: var(--off-white);
 }
 .reserve-btn:active, .menu-btn:active{
-    transform: scale(1.02);
+    transform: scale(0.98);
     transition: 0.2s;
 }
 .pricing{
@@ -275,6 +279,7 @@ body{
     padding: 30px 10px;
     background-color: var(--off-white);
     border-radius:6px;
+    filter: drop-shadow(2px 3px 2px var(--off-black));
 }
 .board h5{
     font-family: "Markazi Text", serif;
@@ -302,4 +307,65 @@ body{
 .board p{
     font-family: "Karla", sans-serif;
     font-optical-sizing: auto;
+    font-size: small;
+}
+/* ABout us Component section */
+.about main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    min-height: 500px;
+    flex-wrap: wrap;
+    margin: 5% auto;
+    gap: 40px;
+}
+.about{
+    background-color: var(--off-white);
+    display: flex;
+    flex-direction: row;
+}
+.about-us{
+    margin-top: 3%;
+}
+.about .about-us, .about figure{
+    flex: 1;
+}
+.about-us h1{
+    font-size: 6rem;
+    color:  var(--bright-yellow);
+    line-height: 1;
+    font-weight: 700;
+}
+.about h2{
+    font-size: 3rem;
+    color:  var(--off-black);
+    line-height: 0.5;
+    font-weight: 400;
+    margin-bottom: 5%;
+}
+.about p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--off-black);
+    width: 90%;
+    margin-top: 3%;
+}
+.indoor, .outdoor{
+    position: absolute;
+    cursor: pointer;
+    filter: drop-shadow(2px 3px 4px var(--off-black));
+}
+.indoor:hover, .outdoor:hover{
+    z-index: 5;
+    transition: 0.3s ease-in-out;
+}
+.indoor:hover{
+    transform: scale(1.01);
+}
+.outdoor{
+    transform: translate(50%,15%);
+}
+button:hover{
+    opacity: 0.85;
 }

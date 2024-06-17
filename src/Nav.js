@@ -1,16 +1,18 @@
-import React from "react";
+import React, {useContext} from "react";
 import './styles.css';
+import { ScrollContext } from './Scrollcontext';
 
 export default function Nav() {
+    const { scrollToSection } = useContext(ScrollContext);
     return (
 <nav className='nav'>
 <ul className="navbar">
-    <li><a href="/home" role="button">HOME</a></li>
-    <li><a href="/about" role="button">ABOUT</a></li>
-    <li><a href="/menu" role="button">MENU</a></li>
-    <li><a href="/reserve" role="button">RESERVATIONS</a></li>
-    <li><a href="/order" role="button">ORDER ONLINE</a></li>
-    <li><a href="/login" role="button">LOGIN</a></li>
+    <li><button className="reset-button" onClick={() => scrollToSection('section1')}>HOME</button></li>
+    <li><button className="reset-button" onClick={() => scrollToSection('section2')}>ABOUT</button></li>
+    <li><button className="reset-button" onClick={() => scrollToSection('section3')}>MENU</button></li>
+    <li><button className="reset-button" onClick={() => scrollToSection('section1')}>RESERVATIONS</button></li>
+    <li><button className="reset-button" onClick={() => scrollToSection('section3')}>ORDER ONLINE</button></li>
+    <li><button className="reset-button" onClick={() => scrollToSection('section4')}>SIGN UP</button></li>
 </ul>
 </nav>
     )
