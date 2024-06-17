@@ -3,8 +3,9 @@ import LLlogo from './assets/Little-lemon-logo.jpg';
 
 export default function Header() {
     const imageStyle = {
-        width: '200px',
-        height: '70px'
+        width: '250px',
+        height: '70px',
+        cursor: 'pointer'
     }
     return (
         <header className='heading'>

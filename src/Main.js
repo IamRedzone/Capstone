@@ -7,7 +7,7 @@ import './styles.css';
 
 export default function Main(){
     return (
-        <div className="main" style={{backgroundColor:'#495E57'}}>
+        <div className="main" >
             <Hero/>
             <Highlights/>
             <Testimonials/>

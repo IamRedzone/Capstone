@@ -5,12 +5,12 @@ export default function Nav() {
     return (
 <nav className='nav'>
 <ul className="navbar">
-    <li><a href="/home" role="button">Home</a></li>
-    <li><a href="/about" role="button">About</a></li>
-    <li><a href="/menu" role="button">Menu</a></li>
-    <li><a href="/reserve" role="button">Reservations</a></li>
-    <li><a href="/order" role="button">Order online</a></li>
-    <li><a href="/login" role="button">Login</a></li>
+    <li><a href="/home" role="button">HOME</a></li>
+    <li><a href="/about" role="button">ABOUT</a></li>
+    <li><a href="/menu" role="button">MENU</a></li>
+    <li><a href="/reserve" role="button">RESERVATIONS</a></li>
+    <li><a href="/order" role="button">ORDER ONLINE</a></li>
+    <li><a href="/login" role="button">LOGIN</a></li>
 </ul>
 </nav>
     )

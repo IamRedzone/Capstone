@@ -9,7 +9,7 @@ export default function About(){
         height: '100px'
     }
     return(
-     <section>
+     <section className='about'>
         <article className='About-us'>
             <h1 className="lemonh1-about">Little Lemon</h1>
             <h2 className="lemonh2-about">Chicago</h2>

@@ -8,33 +8,35 @@ import './styles.css';
 export default function Highlights(){
     const imageStyle = {
         width: '300px',
-        height: '100px'
+        height: '150px',
+        borderTopLeftRadius:'10px',
+        borderTopRightRadius:'10px'
     }
     const iconStyle ={
         width: '16px',
         height:'16px'
     }
     return (
-        <section>
-            <heading>
-            <h2>This week's specials!</h2>
-            <button>Online menu</button>
-            </heading>
-            <main>
+        <section className='highlights'>
+            <header>
+            <h2 className='markazi'>This week's specials!</h2>
+            <button className='menu-btn karla'>Online menu</button>
+            </header>
+            <main className='card-box'>
                 {/* greek salad card */}
              <div className='greek-salad card'>
                 <figure>
                 <img style={imageStyle} src={greekSalad} alt='a tasty greek salad'/>
-                <div>
-                    <figcaption>Greek Salad</figcaption>
-                    <figcaption>$12.99</figcaption>\
+                <div className='pricing'>
+                    <figcaption className='meal-name'>Greek Salad</figcaption>
+                    <figcaption className='meal-price'>$12.99</figcaption>
                 </div>
                 </figure>
                 <p>We are a family owned 
 Mediterranean restaurant, focused on traditional recipes served with a 
 modern twist.
             </p>
-             <div>
+             <div className='order-card'>
             <span>Order a delivery</span> 
             <img src={bikeSvg} style={iconStyle} alt="delivery icon"/>
             </div>
@@ -43,16 +45,16 @@ modern twist.
              <div className='bruscheta card'>
              <figure>
                 <img style={imageStyle} src={bruscheta} alt='an amazing bruscheta dish'/>
-                <div>
-                    <figcaption>Bruscheta</figcaption>
-                    <figcaption>$8.99</figcaption>\
-                </div>
+                <div className='pricing'>
+                    <figcaption className='meal-name'>Bruscheta</figcaption>
+                    <figcaption className='meal-price'>$8.99</figcaption>
+                </div >
                 </figure>
                 <p>We are a family owned 
 Mediterranean restaurant, focused on traditional recipes served with a 
 modern twist.
             </p>
-             <div>
+             <div className='order-card'>
             <span>Order a delivery</span> 
             <img src={bikeSvg} style={iconStyle} alt="delivery icon"/>
             </div>
@@ -61,16 +63,16 @@ modern twist.
              <div className='grilled-tuna card'>
              <figure>
                 <img style={imageStyle} src={grilledTuna} alt='sumptious grilled tuna'/>
-                <div>
-                    <figcaption>Bruscheta</figcaption>
-                    <figcaption>$8.99</figcaption>\
-                </div>
+                <div className='pricing'>
+                    <figcaption className='meal-name'>Grilled tuna</figcaption>
+                    <figcaption className='meal-price'>$11.99</figcaption>
+                </div >
                 </figure>
                 <p>We are a family owned 
 Mediterranean restaurant, focused on traditional recipes served with a 
 modern twist.
             </p>
-             <div>
+             <div className='order-card'>
             <span>Order a delivery</span> 
             <img src={bikeSvg} style={iconStyle} alt="delivery icon"/>
             </div>
