@@ -1,23 +1,23 @@
-import Head from './Head';
-import Main from './Main'
-import Footer from './Footer'
-import Left from './Left';
-import Right from './Right';
+import Home from './pages/Home';
 import './App.css';
 import './styles.css';
 import React from 'react';
 import { ScrollProvider } from './Scrollcontext';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Reservation from './pages/Reservation';
 
 function App() {
   return (
     <ScrollProvider>
-    <div className='container'>
-    <Head/>
-    <Left/>
-    <Main/>
-    <Right/>
-    <Footer/>
-  </div>
+    <>
+    <Router>
+    <Routes>
+    <Route path='/' element={<Home/>} exact/>
+    <Route path='/Reservation.js' element={<Reservation/>}/>
+    </Routes>
+    </Router>
+  </>
+
   </ScrollProvider>
   );
 }

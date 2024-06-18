@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+a[link]{
+    color: #000;
+}
 .reset-button {
     background-color: transparent;
     border: none;
@@ -90,7 +93,7 @@ flex-direction: row;
 gap: 30px;
 align-items: center;
 min-width: fit-content;
-padding: 0 50px;
+padding: 0;
   }
   .navbar a{
     text-decoration: none;
@@ -99,22 +102,28 @@ padding: 0 50px;
     min-width: fit-content;
     color: #000;
   }
+  nav{
+    width: fit-content;
+  }
   .header{
     position: fixed;
     z-index: 10;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
+    justify-items: center;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row; 
+    width: 100%;
+  }
+  .header .content{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row; 
     align-items: center;
-  
+    justify-content: space-between;
+    width: 80%;
+    align-self: center;
   }
-  header{
-    margin-left: 10%;
-  }
-  nav{
-    margin-right: 7%;
+  .heading{
+    width: fit-content;
   }
   /* Styling Hero box */
 .intro h1{
@@ -142,7 +151,7 @@ padding: 0 50px;
     align-content: center;
     flex-direction: row;
     flex-wrap: wrap; 
-    min-height: 500px;
+    min-height: 70vh;
 }
 .hero-box main{
     width: 80%;
@@ -179,6 +188,7 @@ padding: 0 50px;
 /* Highlights section */
 body{
     background-color: var(--warm);
+    overflow-x: hidden;
 }
 .card{
     width: 300px;
@@ -187,13 +197,14 @@ body{
     border-radius: 14px;
     padding-bottom: 3%;
     filter: drop-shadow(3px 3px 4px hsla(160,13%,33%,0.7));
+    margin-bottom: 3%;
 }
 .highlights h2{
     font-size: 3rem;
     color: var(--off-black);
 }
-.highlights header{
-    margin-top: 5%;
+.high-header {
+    margin: 5% auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

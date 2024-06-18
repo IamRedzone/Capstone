@@ -10,7 +10,7 @@ export default function Hero(){
     }
     return (
 <section className='hero-box' style={{backgroundColor:'#495E57'}}>
-    <main>
+    <main style={{paddingTop:'3%'}}>
     <div className='intro'>
         <article className='intro-text'>
             <h1 className="lemonh1-hero markazi" style={{color:'hsla(50,91,52,1.0)'}}>Little Lemon</h1>

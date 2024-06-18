@@ -18,7 +18,7 @@ export default function Highlights(){
     }
     return (
         <section className='highlights'>
-            <header>
+            <header className="high-header">
             <h2 className='markazi'>This week's specials!</h2>
             <button className='menu-btn karla'>Online menu</button>
             </header>
