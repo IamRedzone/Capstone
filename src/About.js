@@ -22,8 +22,8 @@ We are a family owned Mediterranean restaurant, focused on traditional recipes s
 modern twist.</p>
         </article>
     <figure className='about-figure'>
-    <img className="indoor" style={imageStyle} src={indoor} alt='indoor Little Lemon'/>
-    <img className="outdoor" style={imageStyle} src={outdoor} alt='outdoor Little Lemon'/>
+    <img loading="lazy" className="indoor" style={imageStyle} src={indoor} alt='indoor Little Lemon'/>
+    <img loading="lazy" className="outdoor" style={imageStyle} src={outdoor} alt='outdoor Little Lemon'/>
     </figure>
     </main>
      </section>

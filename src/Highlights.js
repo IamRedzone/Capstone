@@ -26,7 +26,7 @@ export default function Highlights(){
                 {/* greek salad card */}
              <div className='greek-salad card'>
                 <figure>
-                <img style={imageStyle} src={greekSalad} alt='a tasty greek salad'/>
+                <img loading="lazy" style={imageStyle} src={greekSalad} alt='a tasty greek salad'/>
                 <div className='pricing'>
                     <figcaption className='meal-name'>Greek Salad</figcaption>
                     <figcaption className='meal-price'>$12.99</figcaption>
@@ -44,7 +44,7 @@ modern twist.
              {/* bruscheta card */}
              <div className='bruscheta card'>
              <figure>
-                <img style={imageStyle} src={bruscheta} alt='an amazing bruscheta dish'/>
+                <img loading="lazy" style={imageStyle} src={bruscheta} alt='an amazing bruscheta dish'/>
                 <div className='pricing'>
                     <figcaption className='meal-name'>Bruscheta</figcaption>
                     <figcaption className='meal-price'>$8.99</figcaption>
@@ -62,7 +62,7 @@ modern twist.
              {/* grilled tuna card */}
              <div className='grilled-tuna card'>
              <figure>
-                <img style={imageStyle} src={grilledTuna} alt='sumptious grilled tuna'/>
+                <img loading="lazy" style={imageStyle} src={grilledTuna} alt='sumptious grilled tuna'/>
                 <div className='pricing'>
                     <figcaption className='meal-name'>Grilled tuna</figcaption>
                     <figcaption className='meal-price'>$11.99</figcaption>

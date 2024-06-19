@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './reserve.css';
 
 
-const BookingForm = () => {
+const BookingForm = ({availableTimes}) => {
   const [formData, setFormData] = useState({
     date: '',
     time: '',
@@ -24,16 +24,9 @@ const BookingForm = () => {
     // Add your form submission logic here (e.g., send data to a server)
   };
 
-  const generateTimeOptions = () => {
-    const times = [];
-    for (let hour = 9; hour <= 18; hour++) {
-      const formattedHour = hour.toString().padStart(2, '0');
-      times.push(`${formattedHour}:00`);
-    }
-    return times;
-  };
-
-  const availableTimes = generateTimeOptions();
+  useEffect(() => {
+    console.log('Current form data:', formData);
+  }, [formData]);
 
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
@@ -50,12 +43,12 @@ const BookingForm = () => {
       </div>
       <div className="form-group">
         <label htmlFor="time">Time:</label>
-        <select 
-          id="time" 
-          name="time" 
-          className="time-input" 
-          value={formData.time} 
-          onChange={handleChange} 
+        <select
+          id="time"
+          name="time"
+          className="time-input"
+          value={formData.time}
+          onChange={handleChange}
           required
         >
           <option value="">Select a time</option>
@@ -86,7 +79,6 @@ const BookingForm = () => {
           name="occasion" 
           value={formData.occasion} 
           onChange={handleChange} 
-          required
         >
           <option value="">Select an occasion</option>
           <option value="Birthday">Birthday</option>

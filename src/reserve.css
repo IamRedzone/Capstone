@@ -52,7 +52,7 @@
     flex: 1;
 }
 .form{
-    background-color: var(--off-white);
+    background-color: var(--off-black);
     border-top-left-radius: 20px;
     height: 100%;
     width: 100%;
@@ -68,6 +68,7 @@
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #ccc;
+    color: var(--off-white);
     border-radius: 10px;
     box-shadow: 0 0 3px var(--off-black);
   }

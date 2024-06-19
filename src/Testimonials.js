@@ -16,7 +16,7 @@ export default function Testimonials(){
          <div className='board karen'>
             <h5>Ratings</h5>
             <figure>
-                <img className='board-img' src={karen} style={faceStyle} alt='our lovely customer'/>
+                <img loading="lazy" className='board-img' src={karen} style={faceStyle} alt='our lovely customer'/>
                 <figcaption>Karen</figcaption>
             </figure>
             <p>Tasty and good</p>
@@ -25,7 +25,7 @@ export default function Testimonials(){
          <div className='board drake'>
             <h5>Ratings</h5>
             <figure>
-                <img className='board-img' src={drake} style={faceStyle} alt='our lovely customer'/>
+                <img loading="lazy" className='board-img' src={drake} style={faceStyle} alt='our lovely customer'/>
                 <figcaption>Drake</figcaption>
             </figure>
             <p>Foodgasm!</p>
@@ -34,7 +34,7 @@ export default function Testimonials(){
          <div className='board peter'>
             <h5>Ratings</h5>
             <figure>
-                <img className='board-img' src={peter} style={faceStyle} alt='our lovely customer'/>
+                <img loading="lazy" className='board-img' src={peter} style={faceStyle} alt='our lovely customer'/>
                 <figcaption>Peter</figcaption>
             </figure>
             <p>Sumptious but healthy!</p>
@@ -43,7 +43,7 @@ export default function Testimonials(){
          <div className='board annie'>
             <h5>Ratings</h5>
             <figure>
-                <img className='board-img' src={annie} style={faceStyle} alt='our lovely customer'/>
+                <img loading="lazy" className='board-img' src={annie} style={faceStyle} alt='our lovely customer'/>
                 <figcaption>Annie</figcaption>
             </figure>
             <p>Absolutely delectable!</p>
