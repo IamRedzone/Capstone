@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './reserve.css';
 
 
-const BookingForm = ({availableTimes}) => {
+const BookingForm = ({availableTimes, dispatch}) => {
   const [formData, setFormData] = useState({
     date: '',
     time: '',
@@ -16,6 +16,9 @@ const BookingForm = ({availableTimes}) => {
       ...formData,
       [name]: value
     });
+    if (name === 'date') {
+      dispatch({ type: 'UPDATE_TIMES', date: value });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -30,6 +33,7 @@ const BookingForm = ({availableTimes}) => {
 
   return (
     <form className="booking-form" onSubmit={handleSubmit}>
+      <h1 className='karla' style={{textAlign:'center', color:'hsla(29,89%,86%,1.0)'}}>Book Now</h1>
       <div className="form-group">
         <label htmlFor="date">Date:</label>
         <input 
@@ -39,6 +43,8 @@ const BookingForm = ({availableTimes}) => {
           value={formData.date} 
           onChange={handleChange} 
           required 
+           aria-required="true"
+          aria-label="Select date for reservation"
         />
       </div>
       <div className="form-group">
@@ -50,6 +56,8 @@ const BookingForm = ({availableTimes}) => {
           value={formData.time}
           onChange={handleChange}
           required
+           aria-required="true"
+          aria-label="Select time for reservation"
         >
           <option value="">Select a time</option>
           {availableTimes.map((time, index) => (
@@ -70,6 +78,8 @@ const BookingForm = ({availableTimes}) => {
           min="1" 
           max="10" 
           required 
+          aria-required="true"
+          aria-label="Enter number of guests"
         />
       </div>
       <div className="form-group">
@@ -79,6 +89,8 @@ const BookingForm = ({availableTimes}) => {
           name="occasion" 
           value={formData.occasion} 
           onChange={handleChange} 
+          aria-required="true"
+          aria-label="Select occasion for reservation"
         >
           <option value="">Select an occasion</option>
           <option value="Birthday">Birthday</option>

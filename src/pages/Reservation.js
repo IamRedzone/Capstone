@@ -1,26 +1,32 @@
-import React,{useState, useEffect} from 'react';
+import React,{useReducer} from 'react';
 import Head from '../Head';
 import Footer from '../Footer';
 import BookingForm from '../BookingForm';
 import BookingPolicy from '../BookingPolicy';
 import '../reserve.css'
 
+const initializeTimes = () => {
+  const times = [];
+  for (let hour = 9; hour <= 18; hour++) {
+    const formattedHour = hour.toString().padStart(2, '0');
+    times.push(`${formattedHour}:00`);
+  }
+  return times;
+};
+
+const updateTimes = (state, action) => {
+  switch (action.type) {
+    case 'UPDATE_TIMES':
+      // For now, just returning the same times regardless of the date
+      return initializeTimes();
+    default:
+      return state;
+  }
+};
+
 export default function Reservation() {
-  const [availableTimes, setAvailableTimes] = useState([]);
+  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
-  useEffect(() => {
-    // Initialize availableTimes state
-    const generateTimeOptions = () => {
-      const times = [];
-      for (let hour = 9; hour <= 18; hour++) {
-        const formattedHour = hour.toString().padStart(2, '0');
-        times.push(`${formattedHour}:00`);
-      }
-      return times;
-    };
-
-    setAvailableTimes(generateTimeOptions());
-  }, []);
   return (
     <div className='reserve-box'>
       <section><Head/></section>
@@ -28,7 +34,7 @@ export default function Reservation() {
         <h3 className='markazi book-heading'>Little Lemon restaurant, Chicago</h3>
         <div className='booking'>
         <main className='policy a-book'><BookingPolicy/></main>
-        <main className='form a-book'><BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}/>
+        <main className='form a-book'><BookingForm availableTimes={availableTimes} dispatch={dispatch}/>
           </main>
         </div>
      </section>
