@@ -38,6 +38,8 @@ const BasicForm = () => {
           value={formData.firstName}
           onChange={handleChange}
           required
+            aria-required="true"
+          aria-label="first name"
         />
       </div>
       <div>
@@ -56,6 +58,8 @@ const BasicForm = () => {
           value={formData.lastName}
           onChange={handleChange}
           required
+            aria-required="true"
+          aria-label="Last name"
         />
       </div>
       <div>
@@ -74,6 +78,8 @@ const BasicForm = () => {
           value={formData.email}
           onChange={handleChange}
           required
+            aria-required="true"
+          aria-label="Email"
         />
       </div>
       <button className='foot-btn' type="submit">Submit</button>

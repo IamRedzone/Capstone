@@ -20,7 +20,7 @@ export default function Highlights(){
         <section className='highlights'>
             <header className="high-header">
             <h2 className='markazi'>This week's specials!</h2>
-            <button className='menu-btn karla'>Online menu</button>
+            <button aria-label='Click to have access to our ravishing selection of meal choices' className='menu-btn karla'>Online menu</button>
             </header>
             <main className='card-box'>
                 {/* greek salad card */}

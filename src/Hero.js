@@ -28,7 +28,7 @@ export default function Hero(){
 Mediterranean restaurant, focused on traditional recipes served with a 
 modern twist.</p>
         </article>
-        <button onClick={handleNavigate} className='reserve-btn karla'>Reserve a table</button>
+        <button aria-label="click to reserve a table" onClick={handleNavigate} className='reserve-btn karla'>Reserve a table</button>
     </div>
     <figure className='hero-figure'>
     <img className='reset-button hero-img ' src={heroImg} style={imageStyle} alt='barbeque rolls'/>
