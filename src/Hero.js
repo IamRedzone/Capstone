@@ -1,13 +1,21 @@
 import React from "react";
 import heroImg from './assets/hero-img.jpg'
 import './styles.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function Hero(){
+    const navigate = useNavigate();
+
     const imageStyle = {
         height: '362px',
         width: '331px',
         borderRadius: '16px'
     }
+
+    const handleNavigate = () => {
+        navigate('/Reservation.js');
+      };
+
     return (
 <section className='hero-box' style={{backgroundColor:'#495E57'}}>
     <main style={{paddingTop:'3%'}}>
@@ -20,7 +28,7 @@ export default function Hero(){
 Mediterranean restaurant, focused on traditional recipes served with a 
 modern twist.</p>
         </article>
-        <button className='reserve-btn karla'>Reserve a table</button>
+        <button onClick={handleNavigate} className='reserve-btn karla'>Reserve a table</button>
     </div>
     <figure className='hero-figure'>
     <img className='reset-button hero-img ' src={heroImg} style={imageStyle} alt='barbeque rolls'/>

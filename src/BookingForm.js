@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import './reserve.css';
 
 
-const BookingForm = ({availableTimes, dispatch}) => {
+const BookingForm = ({availableTimes, dispatch, onSubmit}) => {
   const [formData, setFormData] = useState({
     date: '',
     time: '',
     guests: '',
     occasion: ''
   });
+  const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,10 +22,25 @@ const BookingForm = ({availableTimes, dispatch}) => {
     }
   };
 
+  const validate = () => {
+    let tempErrors = {};
+    tempErrors.date = formData.date ? "" : "Date is required";
+    tempErrors.time = formData.time ? "" : "Time is required";
+    tempErrors.guests = formData.guests ? "" : "Number of guests is required";
+    if (formData.guests) {
+      tempErrors.guests = formData.guests < 1 || formData.guests > 10 ? "Number of guests must be between 1 and 10" : "";
+    }
+    tempErrors.occasion = formData.occasion ? "" : "Occasion is required";
+
+    setErrors(tempErrors);
+    return Object.values(tempErrors).every(x => x === "");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form data submitted:', formData);
-    // Add your form submission logic here (e.g., send data to a server)
+    if (validate()) {
+      onSubmit(formData);
+    }
   };
 
   useEffect(() => {
@@ -36,16 +52,17 @@ const BookingForm = ({availableTimes, dispatch}) => {
       <h1 className='karla' style={{textAlign:'center', color:'hsla(29,89%,86%,1.0)'}}>Book Now</h1>
       <div className="form-group">
         <label htmlFor="date">Date:</label>
-        <input 
-          type="date" 
-          id="date" 
-          name="date" 
-          value={formData.date} 
-          onChange={handleChange} 
-          required 
+        <input
+          type="date"
+          id="date"
+          name="date"
+          value={formData.date}
+          onChange={handleChange}
+          required
            aria-required="true"
           aria-label="Select date for reservation"
         />
+        {errors.date && <div className="error">{errors.date}</div>}
       </div>
       <div className="form-group">
         <label htmlFor="time">Time:</label>
@@ -53,7 +70,7 @@ const BookingForm = ({availableTimes, dispatch}) => {
           id="time"
           name="time"
           className="time-input"
-          value={formData.time}
+          value={formData.time}     
           onChange={handleChange}
           required
            aria-required="true"
@@ -66,6 +83,7 @@ const BookingForm = ({availableTimes, dispatch}) => {
             </option>
           ))}
         </select>
+        {errors.time && <div className="error">{errors.time}</div>}
       </div>
       <div className="form-group">
         <label htmlFor="guests">Number of guests:</label>
@@ -81,6 +99,7 @@ const BookingForm = ({availableTimes, dispatch}) => {
           aria-required="true"
           aria-label="Enter number of guests"
         />
+        {errors.guests && <div className="error">{errors.guests}</div>}
       </div>
       <div className="form-group">
         <label htmlFor="occasion">Occasion:</label>
@@ -98,6 +117,7 @@ const BookingForm = ({availableTimes, dispatch}) => {
           <option value='Date'>Date</option>
           <option value='Engagement'>Engagement</option>
         </select>
+        {errors.occasion && <div className="error">{errors.occasion}</div>}
       </div>
       <button type="submit">Submit reservation</button>
     </form>
